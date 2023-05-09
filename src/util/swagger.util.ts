@@ -12,5 +12,5 @@ export function setupSwagger(app: INestApplication) {
   const apiDocument = SwaggerModule.createDocument(app, swaggerConfig, {
     include: [AppModule],
   });
-  SwaggerModule.setup('api', app, apiDocument);
+  SwaggerModule.setup('api/swagger', app, apiDocument);
 }

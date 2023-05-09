@@ -20,6 +20,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Swagger
+
+The swagger api is available under `api/swagger`.   
+e.g: 
+```
+http://localhost:3000/api/swagger
+```
+
 ## Test
 
 ```bash
