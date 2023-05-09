@@ -1,12 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { Buyer } from '@prisma/client';
 import { BuyerService } from 'src/services';
 
-@Controller()
+@ApiTags('Buyers')
+@Controller({ path: '/buyers', version: VERSION_NEUTRAL })
 export class BuyerController {
-  constructor(private readonly appService: BuyerService) {}
+  constructor(private readonly buyerService: BuyerService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/:id')
+  getBuyer(@Param('id') id: number): Promise<Buyer> {
+    return this.buyerService.getBuyer(+id);
   }
 }

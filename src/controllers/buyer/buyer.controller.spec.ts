@@ -2,7 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { BuyerController } from './buyer.controller';
 import { BuyerService } from 'src/services';
 
-describe('AppController', () => {
+// TODO: Fix tests
+describe('BuyerController', () => {
   let appController: BuyerController;
 
   beforeEach(async () => {

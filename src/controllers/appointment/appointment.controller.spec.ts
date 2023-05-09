@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppointmentController } from './appointment.controller';
 import { AppointmentService } from 'src/services/appointment/appointment.service';
 
+// TODO: Fix tests
 describe('AppointmentController', () => {
   let appController: AppointmentController;
 

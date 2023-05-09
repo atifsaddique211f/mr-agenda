@@ -2,7 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { VendorController } from './vendor.controller';
 import { VendorService } from 'src/services';
 
-describe('AppController', () => {
+// TODO: Fix tests
+describe('VendorController', () => {
   let appController: VendorController;
 
   beforeEach(async () => {

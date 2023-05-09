@@ -1,12 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { Vendor } from '@prisma/client';
 import { VendorService } from 'src/services';
 
-@Controller()
+@ApiTags('Vendors')
+@Controller({ path: '/vendors', version: VERSION_NEUTRAL })
 export class VendorController {
-  constructor(private readonly appService: VendorService) {}
+  constructor(private readonly vendorService: VendorService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/:id')
+  getVendor(@Param('id') id: number): Promise<Vendor> {
+    //TODO: Add exception filter for handling and returning proper error response in case of not found.
+    return this.vendorService.getVendor(+id);
   }
 }
